@@ -14,14 +14,14 @@ if (!defined('ABSPATH')) {
 
 class FormidableSubmissionLimiter
 {
-    public $rateLimit = 2;
-    public $timeLimit = 60;
-    public $limitMessage = 'Sorry, we are receiving a high volume at this time. Please try again in a minute or reach out to us by phone.';
-    public $dataSize = 524288; // 0.5 MB in bytes
-    public $transientExpiry = 3600; // 1 hour
-    public $maxSubmissions = 100;
+    public int $rateLimit = 2;
+    public int $timeLimit = 60;
+    public string $limitMessage = 'Sorry, we are receiving a high volume at this time. Please try again in a minute or reach out to us by phone.';
+    public int $dataSize = 524288; // 0.5 MB in bytes
+    public int $transientExpiry = 3600; // 1 hour
+    public int $maxSubmissions = 100;
 
-    function __construct($settings = [])
+    function __construct(array $settings = [])
     {
         $this->rateLimit = $settings['rateLimit'] ?? $this->rateLimit;
         $this->timeLimit = $settings['timeLimit'] ?? $this->timeLimit;
@@ -61,7 +61,7 @@ class FormidableSubmissionLimiter
      * @param string $submission_data
      * @return string $submission_data
      */
-    function cleanup(string $submission_data)
+    function cleanup(string $submission_data): string
     {
         // Calculate the size of the transient data in bytes.
         $data_size = strlen($submission_data);
@@ -81,7 +81,7 @@ class FormidableSubmissionLimiter
      * @param array $values
      * @return array $errors
      */
-    function limit($errors, $values)
+    function limit($errors, $values): array
     {
         $current_time = time();
         $ip_address = $this->getIp();
