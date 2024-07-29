@@ -13,7 +13,7 @@ The Formidable Submission Limiter is a WordPress plugin that allows you to limit
 
 ## Installation
 
-1. Download the plugin ZIP file from [here](#).
+1. Download the plugin ZIP file.
 2. Log in to your WordPress admin panel.
 3. Navigate to "Plugins" > "Add New."
 4. Click the "Upload Plugin" button at the top of the page.
@@ -43,3 +43,9 @@ The plugin's behavior can be adjusted by modifying the following settings:
 - `formidable_submission_data_size`: Sets the maximum size, in bytes, for storing submission data. Default is 524288 bytes (0.5 MB).
 - `formidable_submission_transient_expiry`: Defines how long, in seconds, the transient data is stored before expiration. Default is 3600 seconds (1 hour).
 - `formidable_submission_max_submissions`: The maximum total number of submissions allowed from a single IP address. Default is 100 submissions.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributing
+If you have suggestions or improvements, feel free to create an issue or submit a pull request.
