@@ -87,7 +87,7 @@ class FormidableSubmissionLimiter
         $ip_address = $this->getIp();
 
         // Proceed only if a valid IP address is found
-        if ($ip_address) {
+        if ($ip_address && filter_var($ip_address, FILTER_VALIDATE_IP)) {
             $transient = get_transient('formidable_submission_data') ?: '{}';
             if (!is_string($transient)) {
                 $transient = '{}';
